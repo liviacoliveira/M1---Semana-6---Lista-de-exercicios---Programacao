@@ -222,6 +222,22 @@ function somaArray(numeros) {
 }
 console.log(somaArray([1, 2, 3, 4]));
 ```
+
+O código corrigido seria o seguinte:
+```javascript
+function somaArray(numeros) {
+    let soma = 0; // Inicializa a variável soma para acumular os valores corretamente, pois sem isso ela não assumirá novos valores enquanto o loop estiver acontecendo 
+
+    for (let i = 0; i < numeros.length; i++) { // declara a variável i pelo mesmo motivo da variável soma, e modifica .size para .lenght, uma vez que somente este é válido em arrays no javascript
+        soma += 2 * numeros[i]; // soma a própria soma ao novo valor dentro do loop, fazendo com que não sobrescreva e mostre apenas o último (como estava sendo feito anteriormente)
+    }
+
+    return soma; 
+}
+
+console.log(somaArray([1, 2, 3, 4])); 
+```
+
 ______
 10) Crie um exemplo prático no qual você tenha duas classes:
 
@@ -229,3 +245,25 @@ ______
 - Uma classe `Livro` que herda de `Produto` e modifica o método `calcularDesconto()`, aplicando um desconto de 20% no preço dos livros.
 
 Explique como funciona a herança nesse contexto e como você implementaria a modificação do método na classe `Livro`.
+
+O código ficaria da seguinte forma:
+```javascript
+class Produto {
+    constructor(nome, preco) {
+        this.nome = nome;
+        this.preco = preco;
+    }
+
+    calcularDesconto() {
+        return this.preco * 0.9; 
+    }
+}
+
+class Livro extends Produto {
+    calcularDesconto() {
+        return this.preco * 0.8; //
+    }
+}
+```
+
+A herança nesse contexto se dá da classe Produto para a classe Livro, que assim como mostrado no código, herda os seus métodos e atributos. Além disso, para modificar o método nesse caso é bem simples, uma vez que definindo um método com o mesmo nome exato, este passa a ser sobrescrito pelo que está na classe filha, modificando-o.
