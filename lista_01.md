@@ -22,7 +22,9 @@ var x = 5;
 console.log(y);
 let y = 10;
 ```
-a) A saída será undefined seguido de erro 
+--> a) A saída será undefined seguido de erro 
+
+A alternativa correta é a letra A, uma vez que por ser declarada com var, a primeira variável (x) é hoisted, ou seja, a declaração dela é "movida para cima" do escopo antes do código ser executado, mas é inicializada como undefined. Já no segundo caso, como a variável (y) é declarada com let, essa é hoisted, porém não inicializada, o que gera um erro no resultado esperado.
 
 b) A saída será 5 seguido de 10
 
@@ -43,7 +45,9 @@ function soma(a, b) {
 console.log(soma(2, 0));
 ```
 
-a) Substituir if (a || b === 0) por if (a === 0 || b === 0)
+---> a) Substituir if (a || b === 0) por if (a === 0 || b === 0)
+
+A resposta certa é a alternativa A, uma vez que o operador (===), que representa igualdade restrita, tem uma precedência maior no javascript do que o operador (||), OU lógico. Isso significa que, com base na linha de código anteriormente escrita, primeiramente ele iria verificar se b === 0, o que nesse caso é verdadeiro, e representa que a condição passará a ser analisada assim: if (a || true), que não é a intenção do código, já que ele passará a verificar se a é um valor "verdadeiro", e não se ele é idêntico a zero. E já na nova formatação, a verificação seria feita para ambos (a e b): caso a === 0 OU b === 0, o que nessa situação é verdadeiro, e retornaria o erro, mas dessa vez, com o código em perfeita execução.
 
 b) Substituir if (a || b === 0) por if (a === 0 && b === 0)
 
@@ -78,7 +82,9 @@ console.log(calcularPreco("eletrônico"));
 
 a) O código imprime 1000.
 
-b) O código imprime 200.
+---> b) O código imprime 200.
+
+A resposta correta é a alternativa B, uma vez que, já que a condicional utilizada é a switch, que divide o código em cases, o case "eletrônico" desejado pelo console.log lá no fim será executado, atribuindo inicialmente o valor de 1000 ao preço. Porém, ele continuará sendo executado por não haver um break, resultando em uma nova atribuição no case "vestuário", em que o preço passa a valer 200. Como nesse caso há um break, indicando a interrupção desse código, o valor impresso será 200.
 
 c) O código imprime 50.
 
@@ -99,7 +105,12 @@ b) 6
 
 c) 18
 
-d) 24
+---> d) 24
+
+A resposta correta é a alternativa D, uma vez que o código acima segue a estrutura: 
+1. Em numeros.map ele multiplica todos os valores do array por 2, resultando em 2,4,6,8 e 10.
+2. Logo em seguida, em .filter, ele filtra apenas os números maiores que 5, nesse caso 6,8 e 10.
+3. Depois disso, em .reduce, ele soma os valores do array, obtendo como resultado final 24.
 ______
 **5) Qual será o conteúdo do array lista após a execução do código? Indique a alternativa correta e justifique sua resposta.**
 
@@ -113,7 +124,9 @@ a) ["banana", "maçã", "uva", "abacaxi", "manga", "laranja"]
 
 b) ["banana", "abacaxi", "manga"]
 
-c) ["banana", "abacaxi", "manga", "laranja"]
+---> c) ["banana", "abacaxi", "manga", "laranja"]
+
+A resposta correta é a alternativa C, uma vez que o método .splice() é utilizado para remover ou modificar elementos de um array. Nesse caso, ele indica, a partir dos números 1 e 2, que serão removidos 2 elementos a partir do item 1 da lista, que corresponde a "maçã", e que esses serão substituidos por: "abacaxi" e "manga". Logo, a nova lista será a da letra C.
 
 d) ["banana", "maçã", "uva", "abacaxi", "manga"]
 ______
@@ -123,7 +136,9 @@ I. A herança é utilizada para compartilhar métodos e propriedades entre class
 II. Em JavaScript, a herança é implementada através da palavra-chave `extends`.
 
 
-a) As duas afirmações são verdadeiras, e a segunda justifica a primeira.
+---> a) As duas afirmações são verdadeiras, e a segunda justifica a primeira.
+
+A resposta correta é a alternativa A, uma vez que herança está dentro da Programação Orientada a Objetos, tendo como principal objetivo justamente herdar códigos sem que seja necessário repeti-los. Desse modo, as duas afirmações acima são verdadeiras, sendo a primeira justificada pela segunda, que explica de que forma uma classe é herdada dentro do javascript.
 
 b) As duas afirmações são verdadeiras, mas a segunda não justifica a primeira.
 
@@ -165,7 +180,9 @@ III) O código não funciona corretamente, pois Funcionario não pode herdar de 
 
 Quais das seguintes afirmações são verdadeiras sobre o código acima?
 
-a) I e II são verdadeiras.
+---> a) I e II são verdadeiras.
+
+A resposta correta é a alternativa A, uma vez que a herança está descrita perfeitamente na afirmativa 1, da mesma forma como a afirmativa 2 explica corretamente como o método da classe Funcionario sobrepõe o anterior, mas ainda sim chama o método da classe pai, garantindo a apresentação inicial antes da adição do salário. Apenas essas duas estão corretas pois o código funciona perfeitamente, considerando que o javascript permite a herança de classes.
 
 b) I, II e III são verdadeiras.
 
@@ -182,7 +199,9 @@ ______
 
 a) A asserção é falsa e a razão é verdadeira.
 
-b) A asserção é verdadeira e a razão é falsa.
+---> b) A asserção é verdadeira e a razão é falsa.
+
+A alternativa correta é a letra B, uma vez que o polimorfismo em javascript realmente permite que objetos de diferentes tipos respondam a métodos de diversas formas, porém o javascript não suporta a sobrecarga de métodos em uma mesma classe, logo o polimorfismo acontece de maneira diferente, como redefinindo métodos de uma classe pai em uma classe filha.
 
 c) A asserção é verdadeira e a razão é verdadeira, mas a razão não explica a asserção.
 
