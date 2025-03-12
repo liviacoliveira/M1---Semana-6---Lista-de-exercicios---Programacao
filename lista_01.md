@@ -261,7 +261,7 @@ class Produto {
 
 class Livro extends Produto {
     calcularDesconto() {
-        return this.preco * 0.8; //
+        return this.preco * 0.8; 
     }
 }
 ```
